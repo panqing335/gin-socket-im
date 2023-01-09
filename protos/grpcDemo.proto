@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./app/grpcService/; grpcService";
+
+package grpcService;
+
+service Demo {
+  rpc UnaryCall (DemoRequest) returns (DemoReply);
+}
+
+message DemoRequest {
+  string json = 1;
+}
+
+message DemoReply {
+  string message = 1;
+}
